@@ -31,9 +31,9 @@ return {
         "pyright",
         "clangd",
       },
-      -- disable automatic setup to avoid conflicts
+      -- completely disable automatic setup
       automatic_installation = true,
-      automatic_setup = false,
+      handlers = {},
     })
 
     mason_tool_installer.setup({
