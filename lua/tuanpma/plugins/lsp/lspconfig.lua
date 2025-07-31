@@ -9,8 +9,10 @@ return {
   config = function()
     -- import cmp-nvim-lsp plugin
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
+    local lspconfig = require("lspconfig")
 
     local keymap = vim.keymap -- for conciseness
+    
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("UserLspConfig", {}),
       callback = function(ev)
@@ -66,19 +68,17 @@ return {
     vim.diagnostic.config({
       signs = {
         text = {
-          [vim.diagnostic.severity.ERROR] = " ",
-          [vim.diagnostic.severity.WARN] = " ",
+          [vim.diagnostic.severity.ERROR] = " ",
+          [vim.diagnostic.severity.WARN] = " ",
           [vim.diagnostic.severity.HINT] = "󰠠 ",
-          [vim.diagnostic.severity.INFO] = " ",
+          [vim.diagnostic.severity.INFO] = " ",
         },
       },
     })
 
-    vim.lsp.config("*", {
+    -- Configure Lua Language Server
+    lspconfig.lua_ls.setup({
       capabilities = capabilities,
-    })
-
-    vim.lsp.config("lua_ls", {
       settings = {
         Lua = {
           -- make the language server recognize "vim" global
@@ -90,6 +90,16 @@ return {
           },
         },
       },
+    })
+
+    -- Configure Python Language Server
+    lspconfig.pyright.setup({
+      capabilities = capabilities,
+    })
+
+    -- Configure C/C++ Language Server
+    lspconfig.clangd.setup({
+      capabilities = capabilities,
     })
   end,
 }
