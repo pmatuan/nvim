@@ -7,10 +7,6 @@ return {
   config = function()
     -- import mason
     local mason = require("mason")
-
-    -- import mason-lspconfig
-    local mason_lspconfig = require("mason-lspconfig")
-
     local mason_tool_installer = require("mason-tool-installer")
 
     -- enable mason and configure icons
@@ -24,16 +20,13 @@ return {
       },
     })
 
-    mason_lspconfig.setup({
-      -- list of servers for mason to install
+    -- minimal mason-lspconfig setup - just for installation
+    require("mason-lspconfig").setup({
       ensure_installed = {
         "lua_ls",
-        "pyright",
+        "pyright", 
         "clangd",
       },
-      -- completely disable automatic setup
-      automatic_installation = true,
-      handlers = {},
     })
 
     mason_tool_installer.setup({
