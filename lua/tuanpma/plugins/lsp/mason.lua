@@ -23,7 +23,6 @@ return {
       ensure_installed = {
         -- LSP servers
         "lua-language-server", -- lua_ls
-        "pyright", -- python
         "clangd", -- c/c++
         
         -- Formatters and linters

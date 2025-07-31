@@ -92,11 +92,6 @@ return {
       },
     })
 
-    -- Configure Python Language Server
-    lspconfig.pyright.setup({
-      capabilities = capabilities,
-    })
-
     -- Configure C/C++ Language Server
     lspconfig.clangd.setup({
       capabilities = capabilities,
