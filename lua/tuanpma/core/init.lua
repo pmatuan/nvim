@@ -1,2 +1,2 @@
-require("josean.core.options")
-require("josean.core.keymaps")
+require("tuanpma.core.options")
+require("tuanpma.core.keymaps")
