@@ -16,17 +16,9 @@ return {
       -- ensure these language parsers are installed
       ensure_installed = {
         "json",
-        "javascript",
-        "typescript",
-        "tsx",
         "yaml",
-        "html",
-        "css",
-        "prisma",
         "markdown",
         "markdown_inline",
-        "svelte",
-        "graphql",
         "bash",
         "lua",
         "vim",
@@ -35,6 +27,8 @@ return {
         "query",
         "vimdoc",
         "c",
+        "cpp",
+        "python"
       },
       incremental_selection = {
         enable = true,
