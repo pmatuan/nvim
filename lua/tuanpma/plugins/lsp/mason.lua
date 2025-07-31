@@ -27,9 +27,6 @@ return {
         
         -- Formatters and linters
         "stylua", -- lua formatter
-        "black", -- python formatter
-        "pylint", -- python linter
-        "isort", -- python import sorter
       },
     })
   end,

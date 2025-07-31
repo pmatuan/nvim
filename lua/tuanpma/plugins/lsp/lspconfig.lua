@@ -76,7 +76,7 @@ return {
       },
     })
 
-    -- Configure Lua Language Server
+    -- Configure Lua Language Server (lua-language-server)
     lspconfig.lua_ls.setup({
       capabilities = capabilities,
       settings = {
