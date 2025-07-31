@@ -31,8 +31,9 @@ return {
         "pyright",
         "clangd",
       },
-      -- disable automatic setup to avoid conflicts with vim.lsp.config
+      -- disable automatic setup to avoid conflicts
       automatic_installation = true,
+      automatic_setup = false,
     })
 
     mason_tool_installer.setup({
