@@ -47,6 +47,12 @@ return {
 					-- Specifically override the suggestion color to be more visible
 					-- This makes zsh autosuggestions darker and more readable on light background
 					vim.g.terminal_color_8 = "#888888" -- Darker gray for suggestions on light background
+					
+					-- Override highlight colors for better contrast on light background
+					vim.api.nvim_set_hl(0, "Visual", { bg = "#4a90e2", fg = "#ffffff" }) -- Blue background with white text
+					vim.api.nvim_set_hl(0, "VisualNOS", { bg = "#4a90e2", fg = "#ffffff" }) -- Same for visual no select
+					vim.api.nvim_set_hl(0, "Search", { bg = "#ff6b35", fg = "#ffffff" }) -- Orange background for search
+					vim.api.nvim_set_hl(0, "IncSearch", { bg = "#e74c3c", fg = "#ffffff" }) -- Red background for incremental search
 				end,
 			})
 
