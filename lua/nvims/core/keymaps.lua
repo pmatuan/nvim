@@ -41,3 +41,27 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 keymap.set("t", "<C-`>", function()
 	require("snacks").terminal()
 end, { desc = "Toggle Terminal" })
+
+---------------------
+-- Clipboard Keymaps for SSH/Remote -------------------
+-- Enhanced copy/paste for remote servers
+
+-- Copy to system clipboard in visual mode (works with SSH via OSC52)
+keymap.set("v", "<leader>y", '"+y', { desc = "Copy to system clipboard" })
+keymap.set("n", "<leader>Y", '"+yg_', { desc = "Copy line to system clipboard" })
+keymap.set("n", "<leader>yy", '"+yy', { desc = "Copy line to system clipboard" })
+
+-- Paste from system clipboard
+keymap.set("n", "<leader>p", '"+p', { desc = "Paste from system clipboard" })
+keymap.set("n", "<leader>P", '"+P', { desc = "Paste from system clipboard before cursor" })
+keymap.set("v", "<leader>p", '"+p', { desc = "Paste from system clipboard" })
+
+-- Alternative copy method using pbcopy (if available on remote server)
+keymap.set("v", "<leader>cy", ":w !pbcopy<CR><CR>", { desc = "Copy selection via pbcopy" })
+
+-- Copy current file path to clipboard
+keymap.set("n", "<leader>cf", function()
+  local path = vim.fn.expand("%:p")
+  vim.fn.setreg("+", path)
+  print("Copied to clipboard: " .. path)
+end, { desc = "Copy file path to clipboard" })
