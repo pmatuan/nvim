@@ -28,13 +28,11 @@ return {
 			-- list of servers for mason to install
 			ensure_installed = {
 				"lua_ls", -- for neovim config
-				"clangd", -- C/C++
 				"pyright", -- Python
 			},
 		})
 		mason_tool_installer.setup({
 			ensure_installed = {
-				"clang-format", -- C/C++ formatter
 				"black", -- python formatter
 				"isort", -- python formatter
 				"ruff", -- python linter and formatter

@@ -6,9 +6,7 @@ return {
 
 		conform.setup({
 			formatters_by_ft = {
-				-- HPC/Scientific Computing languages
-				c = { "clang-format" },
-				cpp = { "clang-format" },
+				-- Only Python for now (C/C++ tools removed temporarily)
 				python = { "black", "isort" },
 			},
 			format_on_save = {
