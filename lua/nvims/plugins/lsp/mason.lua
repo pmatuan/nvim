@@ -27,30 +27,18 @@ return {
 		mason_lspconfig.setup({
 			-- list of servers for mason to install
 			ensure_installed = {
-				"ts_ls",
-				"html",
-				"cssls",
-				"tailwindcss",
-				"svelte",
-				"lua_ls",
-				"graphql",
-				"emmet_ls",
-				"prismals",
-				"pyright",
-				"clangd",
-				"pylsp",
+				"lua_ls", -- for neovim config
+				"clangd", -- C/C++
+				"pyright", -- Python
 			},
 		})
 		mason_tool_installer.setup({
 			ensure_installed = {
-				"prettier", -- prettier formatter
-				"stylua", -- lua formatter
-				"isort", -- python formatter
+				"clang-format", -- C/C++ formatter
 				"black", -- python formatter
-				"pylint", --python linter
-				"eslint_d", -- js linter
+				"isort", -- python formatter
 				"ruff", -- python linter and formatter
-				"clang-format", -- c/c++ formatter
+				"pylint", -- python linter
 			},
 		})
 	end,

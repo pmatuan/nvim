@@ -6,22 +6,10 @@ return {
 
 		conform.setup({
 			formatters_by_ft = {
-				javascript = { "prettier" },
-				typescript = { "prettier" },
-				javascriptreact = { "prettier" },
-				typescriptreact = { "prettier" },
-				svelte = { "prettier" },
-				css = { "prettier" },
-				html = { "prettier" },
-				json = { "prettier" },
-				yaml = { "prettier" },
-				markdown = { "prettier" },
-				graphql = { "prettier" },
-				liquid = { "prettier" },
-				lua = { "stylua" },
-				python = { "ruff_format" },
-				cpp = { "clang-format" },
+				-- HPC/Scientific Computing languages
 				c = { "clang-format" },
+				cpp = { "clang-format" },
+				python = { "black", "isort" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
